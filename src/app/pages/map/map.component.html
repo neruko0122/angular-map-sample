@@ -1,0 +1,28 @@
+<aol-map>
+  <aol-interaction-default></aol-interaction-default>
+  <aol-view [zoom]="mapOptions.zoom" [rotation]="mapOptions.rotation">
+    <aol-coordinate
+      [x]="mapOptions.lng"
+      [y]="mapOptions.lat"
+      [srid]="mapOptions.srid"
+    ></aol-coordinate>
+  </aol-view>
+  <aol-layer-tile>
+    <aol-source-xyz
+      [url]="tileOptions.url"
+      [tileSize]="tileOptions.tileSize"
+      [minZoom]="tileOptions.minZoom"
+      [maxZoom]="tileOptions.maxZoom"
+    >
+      <aol-attributions>
+        <aol-attribution>
+          Maptiles by
+          <a href="http://mierune.co.jp" target="_blank">MIERUNE</a>, under CC
+          BY. Data by
+          <a href="http://osm.org/copyright" target="_blank">OpenStreetMap</a>
+          contributors, under ODbL.
+        </aol-attribution>
+      </aol-attributions>
+    </aol-source-xyz>
+  </aol-layer-tile>
+</aol-map>

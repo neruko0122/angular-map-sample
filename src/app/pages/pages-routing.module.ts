@@ -6,6 +6,20 @@ const routes: Routes = [
   {
     path: '',
     component: PagesComponent,
+    children: [
+      {
+        path: 'top',
+        loadChildren: () => import('./top/top.module').then((m) => m.TopModule),
+        canActivate: [],
+        runGuardsAndResolvers: 'always',
+      },
+      {
+        path: 'map',
+        loadChildren: () => import('./map/map.module').then((m) => m.MapModule),
+        canActivate: [],
+        runGuardsAndResolvers: 'always',
+      },
+    ],
   },
 ];
 
